@@ -1,0 +1,163 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+// navbar-toggler & close-btn bars
+.bar {
+  content: "";
+  display: block;
+  height: math.div(var.$gutter-base, 5);
+  border-radius: math.div(var.$gutter-base, 3);
+}
+
+// reset button properites for navbar-toggler & close-btn
+.btn-reset {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: math.div(var.$gutter-base, 2) var.$gutter-base * 1.5;
+  background-color: var.$background-color-primary;
+  box-shadow: 0px 2px math.div(var.$gutter-base, 2.5) 1px #0000009c;
+
+  .navbar-brand {
+    display: block;
+    width: var.$gutter-base * 2;
+    margin-right: math.div(var.$gutter-base, 3);
+    @include mix.laptop-m-styles {
+      width: var.$gutter-base * 1.9;
+    }
+  }
+  .navbar-toggler {
+    display: none;
+    width: var.$gutter-base * 1.5;
+    transform: scale(-1, 1);
+    .bar {
+      background-color: var.$background-color-quaternary;
+      &:not(:last-child) {
+        margin-bottom: math.div(var.$gutter-base, 5);
+      }
+      &.bar-100 {
+        width: 100%;
+      }
+      &.bar-75 {
+        width: 75%;
+      }
+      &.bar-50 {
+        width: 50%;
+      }
+    }
+    @include mix.laptop-m-styles {
+      display: block;
+    }
+  }
+  .menu-wrapper {
+    &.show {
+      visibility: visible;
+    }
+    .close-btn {
+      display: none;
+      transform: scale(-1, 1);
+      .close-btn-bars {
+        width: var.$gutter-base * 1.5;
+        transform: scale(-1, 1);
+        cursor: pointer;
+        .bar {
+          background-color: var.$background-color-base;
+          &.bar-one {
+            transform: rotate(-45deg);
+          }
+          &.bar-two {
+            margin-top: -6px;
+            transform: rotate(45deg);
+          }
+        }
+        @include mix.tablet-styles {
+          width: var.$gutter-base * 1.2;
+        }
+        @include mix.mobile-l-styles {
+          width: var.$gutter-base;
+        }
+      }
+      @include mix.laptop-m-styles {
+        display: block;
+      }
+    }
+    .navbar-nav {
+      flex-basis: auto;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      padding-left: 0;
+      list-style-type: none;
+
+      .nav-item {
+        text-align: center;
+        &:hover {
+          transform: scale(1.1);
+          transition: 0.3s ease;
+        }
+        &:not(:last-child) {
+          margin-right: var.$gutter-base;
+          @include mix.laptop-m-styles {
+            margin-right: 0;
+            margin-bottom: math.div(var.$gutter-base, 1.5);
+          }
+        }
+        &:last-child {
+          margin-left: math.div(var.$gutter-base, 1.5);
+          @include mix.laptop-m-styles {
+            margin-left: 0;
+          }
+        }
+        .nav-link {
+          color: var.$text-color-secondary;
+          font-weight: var.$font-weight-medium-bold;
+          @include mix.laptop-m-styles {
+            color: var.$text-color-base;
+          }
+        }
+        .btn {
+          display: inline-block;
+          padding: math.div(var.$gutter-base, 4) math.div(var.$gutter-base, 2);
+          color: var.$text-color-base;
+          background-color: var.$background-color-tertiary;
+          border: 2px solid var.$background-color-tertiary;
+          border-radius: math.div(var.$gutter-base, 6);
+          &:hover {
+            color: var.$text-color-secondary;
+            background-color: transparent;
+            transition: 0.3s ease;
+          }
+        }
+      }
+      @include mix.laptop-m-styles {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    @include mix.laptop-m-styles {
+      visibility: hidden;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: calc(
+          math.div(var.$gutter-base, 2) + math.div(var.$gutter-base, 2)
+        )
+        var.$gutter-base;
+      background-color: var.$background-color-quaternary;
+      z-index: 9999;
+    }
+  }
+  @include mix.laptop-m-styles {
+    padding: math.div(var.$gutter-base, 2) var.$gutter-base;
+  }
+}

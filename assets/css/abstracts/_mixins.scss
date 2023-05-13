@@ -1,0 +1,59 @@
+@use "../abstracts/variables" as var;
+@use "sass:math";
+
+@mixin four-k-styles {
+  @media (max-width: 2560px) {
+    @content;
+  }
+}
+
+@mixin laptop-l-styles {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin laptop-m-styles {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet-styles {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile-l-styles {
+  @media (max-width: 425px) {
+    @content;
+  }
+}
+
+@mixin mobile-m-styles {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin mobile-s-styles {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+%wrap {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  @include laptop-l-styles {
+    width: 80%;
+  }
+  @include laptop-m-styles {
+    width: 90%;
+  }
+  @include tablet-styles {
+    padding: var.$gutter-base math.div(var.$gutter-base, 2);
+  }
+}

@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+html {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: var.$font-weight-base;
+  color: var.$text-color-base;
+}
