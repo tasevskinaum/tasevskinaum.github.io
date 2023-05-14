@@ -260,6 +260,11 @@ nav .menu-wrapper .navbar-nav .nav-item .btn:hover {
   margin-bottom: 0;
   font-size: 1.1029411765rem;
 }
+@media (max-width: 425px) {
+  .home-page-header .header-wrapper .content-box .content-inner p {
+    font-size: 1rem;
+  }
+}
 .home-page-header .header-wrapper .content-box .content-inner .btn {
   display: inline-block;
   position: relative;

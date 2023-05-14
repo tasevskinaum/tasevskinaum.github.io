@@ -60,6 +60,9 @@
         p {
           margin-bottom: 0;
           font-size: math.div(var.$gutter-base, 1.7);
+          @include mix.mobile-l-styles {
+            font-size: math.div(var.$gutter-base, 1.875);
+          }
         }
         .btn {
           display: inline-block;
