@@ -69,6 +69,8 @@ nav {
   .menu-wrapper {
     &.show {
       visibility: visible;
+      left: 0;
+      transition: 0.3s ease-in-out;
     }
     .close-btn {
       display: none;
@@ -157,10 +159,11 @@ nav {
       height: 100vh;
       position: fixed;
       top: 0;
-      left: 0;
+      left: 100%;
       padding: var.$gutter-base;
       background-color: var.$background-color-quaternary;
       z-index: 9999;
+      transition: 0.3s ease-in-out;
     }
     @include mix.mobile-l-styles {
       padding: math.div(var.$gutter-base, 1.5) var.$gutter-base;
