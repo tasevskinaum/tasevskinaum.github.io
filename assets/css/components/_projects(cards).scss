@@ -1,0 +1,100 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.projects {
+  @extend %wrap;
+  padding-top: var.$gutter-base;
+  padding-bottom: var.$gutter-base;
+  .title {
+    margin-bottom: var.$gutter-base;
+    h2 {
+      margin-bottom: 0;
+      font-size: var.$gutter-base * 1.5;
+      color: var.$text-color-secondary;
+      text-align: center;
+      @include mix.mobile-l-styles {
+        font-size: var.$gutter-base;
+        text-align: left;
+      }
+    }
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -(math.div(var.$gutter-base, 1.5));
+
+    .card {
+      flex-basis: 33.33%;
+      margin-bottom: math.div(var.$gutter-base, 1.5);
+      .card-inner {
+        display: block;
+        margin-right: math.div(var.$gutter-base, 1.5);
+        background-color: var.$background-color-base;
+        border-radius: math.div(var.$gutter-base, 3);
+        box-shadow: 0px 0px 10px 0px #000000b7;
+        overflow: hidden;
+        transition: 0.3s linear;
+        color: #000000;
+        &:hover {
+          transform: scale(1.05);
+        }
+        img {
+          height: 100%;
+        }
+        .card-body {
+          *:not(:last-child) {
+            margin-bottom: math.div(var.$gutter-base, 3);
+          }
+          padding: math.div(var.$gutter-base, 2);
+          color: var.$text-color-primary;
+          .card-badge {
+            display: inline-block;
+            background-color: var.$background-color-primary;
+            padding: math.div(var.$gutter-base, 6) math.div(var.$gutter-base, 3);
+          }
+          .card-heading {
+            width: 80%;
+            @include mix.laptop-l-styles {
+              width: 90%;
+            }
+            @include mix.laptop-m-styles {
+              width: 100%;
+            }
+          }
+          .development-time {
+            display: inline-block;
+            font-weight: var.$font-weight-bold;
+            font-size: math.div(var.$gutter-base, 2.5);
+          }
+          .card-footer {
+            margin-top: math.div(var.$gutter-base, 2);
+            text-align: right;
+            .btn {
+              display: inline-block;
+              padding: math.div(var.$gutter-base, 3)
+                math.div(var.$gutter-base, 1.5);
+              background-color: var.$background-color-tertiary;
+              color: var.$text-color-base;
+              font-weight: var.$font-weight-bold;
+              border-radius: math.div(var.$gutter-base, 5);
+            }
+          }
+        }
+        @include mix.mobile-l-styles {
+          margin-right: 0;
+        }
+      }
+      @include mix.tablet-styles {
+        flex-basis: 50%;
+      }
+      @include mix.mobile-l-styles {
+        flex-basis: 100%;
+        margin-bottom: var.$gutter-base;
+      }
+    }
+    @include mix.mobile-l-styles {
+      margin-right: 0;
+    }
+  }
+}

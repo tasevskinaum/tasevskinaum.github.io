@@ -1,0 +1,39 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.card-filters {
+  display: flex;
+  flex-wrap: wrap;
+  input[type="checkbox"] {
+    display: none;
+  }
+  .filter {
+    flex-basis: 33.33%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: var.$gutter-base;
+    background-color: var.$background-color-quaternary;
+    transition: 0.3s linear;
+    cursor: pointer;
+    span {
+      flex-basis: 80%;
+      font-weight: var.$font-weight-bold;
+    }
+    i {
+      flex-basis: 20%;
+      color: var.$background-color-quaternary;
+      font-size: var.$gutter-base;
+      text-align: right;
+    }
+    &.show {
+      background-color: var.$background-color-secondary;
+      color: var.$background-color-quaternary;
+    }
+    @include mix.tablet-styles {
+      flex-basis: 100%;
+      padding: math.div(var.$gutter-base, 1.5);
+    }
+  }
+}
