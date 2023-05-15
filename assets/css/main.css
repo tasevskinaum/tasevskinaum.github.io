@@ -515,6 +515,21 @@ nav .menu-wrapper .navbar-nav .nav-item .btn:hover {
   }
 }
 
+footer {
+  padding: 0.9375rem;
+  background-color: #302f38;
+}
+footer p {
+  margin-bottom: 0;
+  font-weight: 700;
+  text-align: center;
+}
+@media (max-width: 425px) {
+  footer p {
+    font-size: 0.8928571429rem;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
