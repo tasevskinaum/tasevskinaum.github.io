@@ -8,8 +8,6 @@
 
 .hire-page-header {
   @extend %wrap;
-  padding-top: var.$gutter-base * 3;
-  padding-bottom: var.$gutter-base * 3;
   .title {
     margin-bottom: 0;
     font-size: var.$gutter-base * 2;
@@ -24,10 +22,6 @@
     @include mix.mobile-m-styles {
       font-size: var.$gutter-base * 1.2;
     }
-  }
-  @include mix.tablet-styles {
-    padding-top: var.$gutter-base;
-    padding-bottom: var.$gutter-base;
   }
 }
 

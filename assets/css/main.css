@@ -534,10 +534,6 @@ footer p {
   height: 100vh;
 }
 
-.hire-page-header {
-  padding-top: 5.625rem;
-  padding-bottom: 5.625rem;
-}
 .hire-page-header .title {
   margin-bottom: 0;
   font-size: 3.75rem;
@@ -557,12 +553,6 @@ footer p {
 @media (max-width: 375px) {
   .hire-page-header .title {
     font-size: 2.25rem;
-  }
-}
-@media (max-width: 768px) {
-  .hire-page-header {
-    padding-top: 1.875rem;
-    padding-bottom: 1.875rem;
   }
 }
 
