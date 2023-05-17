@@ -1,0 +1,134 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.hire-page-body {
+  height: 100vh;
+}
+
+.hire-page-header {
+  @extend %wrap;
+  padding-top: var.$gutter-base * 3;
+  padding-bottom: var.$gutter-base * 3;
+  .title {
+    margin-bottom: 0;
+    font-size: var.$gutter-base * 2;
+    color: var.$text-color-secondary;
+    text-align: center;
+    @media (max-width: 500px) {
+      font-size: var.$gutter-base * 1.5;
+    }
+    @include mix.mobile-l-styles {
+      font-size: var.$gutter-base * 1.4;
+    }
+    @include mix.mobile-m-styles {
+      font-size: var.$gutter-base * 1.2;
+    }
+  }
+  @include mix.tablet-styles {
+    padding-top: var.$gutter-base;
+    padding-bottom: var.$gutter-base;
+  }
+}
+
+.form-container {
+  @extend %wrap;
+  padding-top: 0;
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    .form-group {
+      flex-basis: 50%;
+      padding: math.div(var.$gutter-base, 3);
+      color: var.$text-color-secondary;
+
+      label {
+        display: block;
+        margin-bottom: math.div(var.$gutter-base, 6);
+        font-weight: var.$font-weight-bold;
+      }
+      .form-control {
+        display: block;
+        width: 100%;
+        padding: math.div(var.$gutter-base, 1.5);
+        background-color: var.$background-color-base;
+        border: 2px solid transparent;
+        border-radius: math.div(var.$gutter-base, 5);
+        &::placeholder {
+          font-style: italic;
+        }
+        @include mix.tablet-styles {
+          padding: math.div(var.$gutter-base, 2);
+        }
+        @media (max-width: 500px) {
+          padding: math.div(var.$gutter-base, 3);
+        }
+      }
+      &.fg-std-type {
+        position: relative;
+        .type-std-btn {
+          display: flex;
+          justify-content: space-between;
+          color: var.$text-color-secondary;
+          font-weight: var.$font-weight-medium-bold;
+          cursor: pointer;
+          .arrow {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-right: 3px solid var.$background-color-quaternary;
+            border-bottom: 3px solid var.$background-color-quaternary;
+            transform: rotate(45deg);
+          }
+        }
+        .type-std-labels {
+          display: none;
+          width: 100%;
+          margin-top: math.div(var.$gutter-base, 2);
+          background-color: var.$background-color-base;
+          border-radius: math.div(var.$gutter-base, 5);
+          box-shadow: 0px 2px math.div(var.$gutter-base, 2.5) 1px #0000009c;
+          font-size: math.div(var.$gutter-base, 2);
+          & * {
+            margin-bottom: 0;
+            padding: math.div(var.$gutter-base, 1.5);
+            cursor: pointer;
+            &:not(:last-child) {
+              border-bottom: 1px solid grey;
+            }
+            @include mix.tablet-styles {
+              padding: math.div(var.$gutter-base, 2);
+            }
+            @include mix.mobile-l-styles {
+              padding: math.div(var.$gutter-base, 3);
+            }
+          }
+          &.show {
+            display: block;
+          }
+        }
+        .type-std-inputs {
+          display: none;
+        }
+      }
+      &.submit-btn {
+        margin-top: math.div(var.$gutter-base, 1.25);
+        @media (max-width: 500px) {
+          margin-top: var.$gutter-base * 2.7;
+        }
+      }
+      .btn {
+        color: var.$text-color-base;
+        background-color: var.$background-color-tertiary;
+        font-weight: var.$font-weight-medium-bold;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      @media (max-width: 500px) {
+        flex-basis: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}

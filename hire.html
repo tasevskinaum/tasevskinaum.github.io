@@ -77,10 +77,105 @@
         </ul>
       </div>
     </nav>
+    <header class="hire-page-header">
+      <h1 class="title">Вработи студенти</h1>
+    </header>
+    <main>
+      <div class="form-container">
+        <form>
+          <div class="form-group">
+            <label for="full-name">Име и презиме</label>
+            <input
+              type="text"
+              name="full-name"
+              id="full-name"
+              class="form-control"
+              placeholder="Вашето име и презиме"
+            />
+          </div>
+          <div class="form-group">
+            <label for="company-name">Име на компанија</label>
+            <input
+              type="text"
+              name="company-name"
+              id="company-name"
+              class="form-control"
+              placeholder="Име на вашата компанија"
+            />
+          </div>
+          <div class="form-group">
+            <label for="company-email">Контакт имејл</label>
+            <input
+              type="email"
+              name="company-email"
+              id="company-email"
+              class="form-control"
+              placeholder="Контакт имејл на вашата компанија"
+            />
+          </div>
+          <div class="form-group">
+            <label for="company-phone">Контакт телефон</label>
+            <input
+              type="tel"
+              name="company-phone"
+              id="company-phone"
+              class="form-control"
+              placeholder="Контакт телефон на вашата компанија"
+            />
+          </div>
+
+          <div class="form-group fg-std-type">
+            <label for="type-std-btn">Тип на студенти</label>
+            <button class="type-std-btn form-control" id="type-std-btn">
+              <span class="choose-std-type">Изберете тип на студент</span>
+              <div class="arrow"></div>
+            </button>
+            <div class="type-std-labels">
+              <label for="marketing-std">Студенти од маркетинг</label>
+              <label for="coding-std">Студенти од програмирање</label>
+              <label for="data-science-std">Студенти од data science</label>
+              <label for="design-std">Студенти од дизајн</label>
+            </div>
+            <div class="type-std-inputs">
+              <input
+                type="radio"
+                name="type-std"
+                id="marketing-std"
+                class="option"
+              />
+              <input
+                type="radio"
+                name="type-std"
+                id="coding-std"
+                class="option"
+              />
+              <input
+                type="radio"
+                name="type-std"
+                id="data-science-std"
+                class="option"
+              />
+              <input
+                type="radio"
+                name="type-std"
+                id="design-std"
+                class="option"
+              />
+            </div>
+          </div>
+
+          <div class="form-group submit-btn">
+            <button type="submit" class="btn form-control">испрати</button>
+          </div>
+        </form>
+      </div>
+    </main>
     <footer>
       <p>Изработено со &#10084;&#65039; од студентите на Brainster</p>
     </footer>
     <!-- Navbar-Script -->
     <script src="./assets/js/navbar.js"></script>
+    <!-- Hire-Form-Script -->
+    <script src="./assets/js/hire-form.js"></script>
   </body>
 </html>
