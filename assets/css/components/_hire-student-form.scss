@@ -8,6 +8,8 @@
 
 .hire-page-header {
   @extend %wrap;
+  padding-top: var.$gutter-base * 3;
+  padding-bottom: var.$gutter-base * 3;
   .title {
     margin-bottom: 0;
     font-size: var.$gutter-base * 2;
@@ -22,6 +24,14 @@
     @include mix.mobile-m-styles {
       font-size: var.$gutter-base * 1.2;
     }
+  }
+  @include mix.laptop-m-styles {
+    padding-top: var.$gutter-base * 2;
+    padding-bottom: var.$gutter-base * 2;
+  }
+  @include mix.tablet-styles {
+    padding-top: var.$gutter-base;
+    padding-bottom: var.$gutter-base;
   }
 }
 
@@ -83,6 +93,7 @@
           border-radius: math.div(var.$gutter-base, 5);
           box-shadow: 0px 2px math.div(var.$gutter-base, 2.5) 1px #0000009c;
           font-size: math.div(var.$gutter-base, 2);
+          overflow: hidden;
           & * {
             margin-bottom: 0;
             padding: math.div(var.$gutter-base, 1.5);
@@ -90,6 +101,11 @@
             &:not(:last-child) {
               border-bottom: 1px solid grey;
             }
+
+            &:hover {
+              background-color: rgba(128, 128, 128, 0.2);
+            }
+
             @include mix.tablet-styles {
               padding: math.div(var.$gutter-base, 2);
             }
