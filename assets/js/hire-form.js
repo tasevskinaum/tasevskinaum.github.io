@@ -39,7 +39,7 @@ function set_form_container_height() {
     var type_std_labels_height = type_std_labels.offsetHeight;
     var view_height = window.innerHeight;
 
-    var form_height = (view_height)
+    var form_height = (view_height + 150)
         - (parseInt(navbar_height)
             + parseInt(header_height)
             + parseInt(footer_height))
