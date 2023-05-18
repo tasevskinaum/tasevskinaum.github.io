@@ -82,16 +82,17 @@
     </header>
     <main>
       <div class="form-container">
-        <form>
+        <form class="hire-std-form">
           <div class="form-group">
             <label for="full-name">Име и презиме</label>
             <input
               type="text"
               name="full-name"
               id="full-name"
-              class="form-control"
+              class="form-control hire-form-input"
               placeholder="Вашето име и презиме"
             />
+            <span class="validate-msg"></span>
           </div>
           <div class="form-group">
             <label for="company-name">Име на компанија</label>
@@ -99,19 +100,21 @@
               type="text"
               name="company-name"
               id="company-name"
-              class="form-control"
+              class="form-control hire-form-input"
               placeholder="Име на вашата компанија"
             />
+            <span class="validate-msg"></span>
           </div>
           <div class="form-group">
             <label for="company-email">Контакт имејл</label>
             <input
-              type="email"
+              type="text"
               name="company-email"
               id="company-email"
-              class="form-control"
+              class="form-control hire-form-input"
               placeholder="Контакт имејл на вашата компанија"
             />
+            <span class="validate-msg"></span>
           </div>
           <div class="form-group">
             <label for="company-phone">Контакт телефон</label>
@@ -119,17 +122,22 @@
               type="tel"
               name="company-phone"
               id="company-phone"
-              class="form-control"
+              class="form-control hire-form-input"
               placeholder="Контакт телефон на вашата компанија"
             />
+            <span class="validate-msg"></span>
           </div>
 
           <div class="form-group fg-std-type">
             <label for="type-std-btn">Тип на студенти</label>
-            <button class="type-std-btn form-control" id="type-std-btn">
+            <button
+              class="type-std-btn form-control hire-form-input"
+              id="type-std-btn"
+            >
               <span class="choose-std-type">Изберете тип на студент</span>
-              <div class="arrow"></div>
+              <span class="arrow"></span>
             </button>
+            <span class="validate-msg"></span>
             <div class="type-std-labels">
               <label for="marketing-std">Студенти од маркетинг</label>
               <label for="coding-std">Студенти од програмирање</label>
@@ -173,9 +181,10 @@
     <footer>
       <p>Изработено со &#10084;&#65039; од студентите на Brainster</p>
     </footer>
-    <!-- Navbar-Script -->
+
     <script src="./assets/js/navbar.js"></script>
-    <!-- Hire-Form-Script -->
     <script src="./assets/js/hire-form.js"></script>
+    <script src="./assets/js/hire-form-dropdown.js"></script>
+    <script src="./assets/js/hire-form-validation.js"></script>
   </body>
 </html>

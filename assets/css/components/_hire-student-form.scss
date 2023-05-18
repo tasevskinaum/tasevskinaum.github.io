@@ -58,6 +58,7 @@
         background-color: var.$background-color-base;
         border: 2px solid transparent;
         border-radius: math.div(var.$gutter-base, 5);
+        outline: none;
         &::placeholder {
           font-style: italic;
         }
@@ -67,6 +68,10 @@
         @media (max-width: 500px) {
           padding: math.div(var.$gutter-base, 3);
         }
+      }
+      .validate-msg {
+        display: block;
+        font-size: math.div(var.$gutter-base, 2.5);
       }
       &.fg-std-type {
         position: relative;

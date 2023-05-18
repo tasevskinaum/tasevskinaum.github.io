@@ -596,6 +596,7 @@ footer p {
   background-color: #ffffff;
   border: 2px solid transparent;
   border-radius: 0.375rem;
+  outline: none;
 }
 .form-container form .form-group .form-control::placeholder {
   font-style: italic;
@@ -609,6 +610,10 @@ footer p {
   .form-container form .form-group .form-control {
     padding: 0.625rem;
   }
+}
+.form-container form .form-group .validate-msg {
+  display: block;
+  font-size: 0.75rem;
 }
 .form-container form .form-group.fg-std-type {
   position: relative;
