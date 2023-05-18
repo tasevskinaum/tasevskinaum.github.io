@@ -51,6 +51,16 @@
         margin-bottom: math.div(var.$gutter-base, 6);
         font-weight: var.$font-weight-bold;
       }
+      input {
+        &.valid {
+          background: url(../images/icons8-correct-25.png) no-repeat 98% 50%
+            var.$background-color-base;
+        }
+        &.invalid {
+          background: url(../images/icons8-incorrect-25.png) no-repeat 98% 50%
+            var.$background-color-base;
+        }
+      }
       .form-control {
         display: block;
         width: 100%;
@@ -59,6 +69,7 @@
         border: 2px solid transparent;
         border-radius: math.div(var.$gutter-base, 5);
         outline: none;
+
         &::placeholder {
           font-style: italic;
         }

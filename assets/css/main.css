@@ -589,6 +589,12 @@ footer p {
   margin-bottom: 0.3125rem;
   font-weight: 900;
 }
+.form-container form .form-group input.valid {
+  background: url(../images/icons8-correct-25.png) no-repeat 98% 50% #ffffff;
+}
+.form-container form .form-group input.invalid {
+  background: url(../images/icons8-incorrect-25.png) no-repeat 98% 50% #ffffff;
+}
 .form-container form .form-group .form-control {
   display: block;
   width: 100%;

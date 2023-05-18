@@ -28,7 +28,7 @@ function full_name_validate(e) {
 
     }
     else if (!is_full_name(full_name_value)) {
-        set_error_msg(full_name_input, "Внесете го вашето име и презиме");
+        set_error_msg(full_name_input, "Внесете валидно име и презиме");
         e.preventDefault();
 
     }
@@ -91,7 +91,7 @@ function company_phone_validate(e) {
 
 function student_type_validate() {
     if (!valid_student_type()) {
-        set_error_msg(type_std_input, "Изберете студент");
+        set_error_msg(type_std_input, "Полето е задолжително");
     }
     else {
         set_correct_msg(type_std_input);
@@ -106,6 +106,8 @@ function set_error_msg(input, message) {
     validate_msg.innerText = message;
     validate_msg.style.color = "red";
     input.style.borderColor = "red";
+    input.classList.add("invalid");
+    input.classList.remove("valid");
 }
 
 function set_correct_msg(input) {
@@ -114,6 +116,8 @@ function set_correct_msg(input) {
 
     validate_msg.innerText = "";
     input.style.borderColor = "lime";
+    input.classList.add("valid");
+    input.classList.remove("invalid");
 }
 
 function is_full_name(full_name) {
