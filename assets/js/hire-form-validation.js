@@ -104,8 +104,8 @@ function set_error_msg(input, message) {
     var validate_msg = form_group.querySelector(".validate-msg");
 
     validate_msg.innerText = message;
-    validate_msg.style.color = "red";
-    input.style.borderColor = "red";
+    validate_msg.style.color = "#d90127";
+    input.style.borderColor = "#d90127";
     input.classList.add("invalid");
     input.classList.remove("valid");
 }
@@ -115,13 +115,13 @@ function set_correct_msg(input) {
     var validate_msg = form_group.querySelector(".validate-msg");
 
     validate_msg.innerText = "";
-    input.style.borderColor = "lime";
+    input.style.borderColor = "#3bb37d";
     input.classList.add("valid");
     input.classList.remove("invalid");
 }
 
 function is_full_name(full_name) {
-    return /^([a-zA-Z]{3})+(([',. -][a-zA-Z ]{3})?[a-zA-Z]*)*$/g
+    return /^([a-zA-Z]{3})+(([',. -][a-zA-Z]{3})?[a-zA-Z]*)*$/g
         .test(full_name);
 }
 

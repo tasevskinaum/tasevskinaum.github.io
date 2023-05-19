@@ -633,8 +633,8 @@ footer p {
 }
 .form-container form .form-group.fg-std-type .type-std-btn .arrow {
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
   border-right: 3px solid #302f38;
   border-bottom: 3px solid #302f38;
   transform: rotate(45deg);

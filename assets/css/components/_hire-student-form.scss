@@ -94,8 +94,8 @@
           cursor: pointer;
           .arrow {
             content: "";
-            width: 10px;
-            height: 10px;
+            width: math.div(var.$gutter-base, 3);
+            height: math.div(var.$gutter-base, 3);
             border-right: 3px solid var.$background-color-quaternary;
             border-bottom: 3px solid var.$background-color-quaternary;
             transform: rotate(45deg);
