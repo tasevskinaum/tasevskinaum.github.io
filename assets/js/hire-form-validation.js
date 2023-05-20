@@ -89,9 +89,10 @@ function company_phone_validate(e) {
 
 }
 
-function student_type_validate() {
+function student_type_validate(e) {
     if (!valid_student_type()) {
         set_error_msg(type_std_input, "Полето е задолжително");
+        e.preventDefault();
     }
     else {
         set_correct_msg(type_std_input);
