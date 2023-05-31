@@ -54,7 +54,6 @@
     width: 90%;
   }
   @include tablet-styles {
-    width: 100%;
-    padding: var.$gutter-base math.div(var.$gutter-base, 1.5);
+    padding: var.$gutter-base math.div(var.$gutter-base, 2);
   }
 }

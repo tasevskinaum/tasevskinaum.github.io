@@ -5,8 +5,22 @@
 }
 
 // Font settings
+$font-family-base: "Montserrat", sans-serif;
+
+$font-size-small: rem-calc(13);
+$font-size-base: rem-calc(16);
+$font-size-medium: rem-calc(18);
+
+$heading-size-tiny: rem-calc(20);
+$heading-size-small: rem-calc(28);
+$heading-size-big: rem-calc(33);
+$heading-size-bigger: rem-calc(50);
+
+$line-height-base: 1.5;
+$line-height-small: 1;
+
 $font-weight-normal: 400;
-$font-weight-medium-bold: 700;
+$font-weight-medium-bold: 600;
 $font-weight-bold: 900;
 $font-weight-base: $font-weight-normal;
 
@@ -14,19 +28,12 @@ $font-weight-base: $font-weight-normal;
 $gutter-base: rem-calc(30);
 
 // Color settings
-$text-color-base: #ffffff;
-$text-color-primary: #000000;
-$text-color-secondary: #353535;
+$text-color-base: #000000;
+$text-color-primary: #ffffff;
+$text-color-secondary: #b3b3b3;
 
-$background-color-base: #ffffff;
-$background-color-primary: #fcd232;
-$background-color-secondary: #eb3b3b;
-$background-color-tertiary: #ff1300;
-$background-color-quaternary: #302f38;
-
-$linear-gradient: linear-gradient(
-  to right,
-  $background-color-primary 0%,
-  $background-color-secondary 50%,
-  $background-color-primary 100%
-);
+$background-color-base: #fff;
+$background-color-primary: #e80566;
+$background-color-secondary: #f6f6f6;
+$background-color-tertiary: #007bff;
+$background-color-quaternary: #17a2b8;

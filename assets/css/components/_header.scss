@@ -1,0 +1,169 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+@use "sass:math";
+
+header {
+  .wrapper {
+    display: flex;
+    height: 100%;
+    .content-box {
+      display: flex;
+      position: relative;
+      flex-wrap: wrap;
+      flex: 0 0 50%;
+      align-items: center;
+      padding: var.$gutter-base;
+      .inner {
+        & *:not(:last-child) {
+          margin-bottom: math.div(var.$gutter-base, 3);
+          @include mix.mobile-m-styles {
+            margin-bottom: math.div(var.$gutter-base, 2);
+          }
+        }
+        .welcome {
+          display: block;
+          color: var.$background-color-tertiary;
+          font-weight: var.$font-weight-bold;
+          text-transform: uppercase;
+        }
+        h1 {
+          text-transform: uppercase;
+          span {
+            color: var.$background-color-tertiary;
+          }
+        }
+        .btn {
+          display: inline-block;
+          position: relative;
+          padding: math.div(var.$gutter-base, 3);
+          background-color: var.$background-color-tertiary;
+          color: var.$text-color-primary;
+          font-weight: var.$font-weight-medium-bold;
+          text-transform: uppercase;
+          border-radius: math.div(var.$gutter-base, 6);
+          border: 1px solid var.$background-color-tertiary;
+          z-index: 0;
+          &:hover {
+            color: var.$background-color-tertiary;
+            &::before {
+              height: 100%;
+            }
+          }
+          &::before {
+            content: "";
+            width: 100%;
+            height: 0%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: var.$background-color-base;
+            border-radius: math.div(var.$gutter-base, 6)
+              math.div(var.$gutter-base, 6) 100% 100%;
+            transition: 0.3s ease;
+            z-index: -1;
+          }
+        }
+        .social-links {
+          display: flex;
+          flex-wrap: wrap;
+          padding-left: 0;
+          margin-bottom: 0;
+          list-style: none;
+          justify-content: flex-end;
+          li {
+            &:not(:last-child) {
+              margin-right: math.div(var.$gutter-base, 2);
+            }
+            a {
+              width: var.$gutter-base * 1.3;
+              height: var.$gutter-base * 1.3;
+              display: inline-block;
+              line-height: var.$gutter-base * 1.3;
+              color: var.$background-color-tertiary;
+              text-align: center;
+              border: 1px solid var.$background-color-tertiary;
+              border-radius: 50%;
+              transition: 0.3s ease;
+              &:hover {
+                transform: scale(1.2);
+              }
+              i {
+                font-size: math.div(var.$gutter-base, 1.5);
+              }
+            }
+          }
+          @include mix.mobile-l-styles {
+            justify-content: flex-start;
+            margin-top: math.div(var.$gutter-base, 3);
+          }
+        }
+        .blink-down-arrow {
+          display: inline-block;
+          position: absolute;
+          bottom: math.div(var.$gutter-base, 2);
+          left: 50%;
+          animation: blink_arrow 1s infinite;
+          span {
+            display: inline-block;
+            content: "";
+            width: var.$gutter-base * 1.3;
+            height: var.$gutter-base * 1.3;
+            border-right: math.div(var.$gutter-base, 6) solid
+              var.$background-color-quaternary;
+            border-bottom: math.div(var.$gutter-base, 6) solid
+              var.$background-color-quaternary;
+            transform: rotate(45deg) translate(-50%);
+          }
+          @include mix.tablet-styles {
+            display: none;
+          }
+        }
+      }
+      @include mix.tablet-styles {
+        flex: unset;
+        display: block;
+      }
+      @include mix.mobile-l-styles {
+        padding: math.div(var.$gutter-base, 1.5);
+      }
+    }
+    .img-box {
+      flex: 0 0 50%;
+      .img {
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          var.$background-color-tertiary,
+          var.$background-color-base 50% 80%,
+          var.$background-color-tertiary
+        );
+        border-radius: 48% 66% 58% 55%/50% 39% 70% 60%;
+        transition: 0.5s ease;
+        &:hover {
+          border-radius: 100% 22% 90% 63%/79% 14% 96% 100%;
+        }
+        img {
+          height: 100%;
+        }
+      }
+      @include mix.tablet-styles {
+        order: -1;
+      }
+    }
+    @include mix.tablet-styles {
+      flex-direction: column;
+    }
+  }
+}
+
+@keyframes blink_arrow {
+  0% {
+    bottom: math.div(var.$gutter-base, 2);
+  }
+  50% {
+    bottom: var.$gutter-base;
+  }
+  100% {
+    bottom: math.div(var.$gutter-base, 3);
+  }
+}
