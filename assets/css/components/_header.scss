@@ -149,6 +149,10 @@ header {
       @include mix.tablet-styles {
         order: -1;
       }
+      @include mix.mobile-l-styles {
+        height: 0;
+        flex-grow: 1;
+      }
     }
     @include mix.tablet-styles {
       flex-direction: column;
