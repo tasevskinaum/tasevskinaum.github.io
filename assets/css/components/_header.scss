@@ -85,7 +85,7 @@ header {
               border-radius: 50%;
               transition: 0.3s ease;
               &:hover {
-                transform: scale(1.2);
+                transform: scale(1.3);
               }
               i {
                 font-size: math.div(var.$gutter-base, 1.5);
@@ -113,8 +113,12 @@ header {
             border-bottom: math.div(var.$gutter-base, 6) solid
               var.$background-color-quaternary;
             transform: rotate(45deg) translate(-50%);
+            @include mix.tablet-styles {
+              width: var.$gutter-base;
+              height: var.$gutter-base;
+            }
           }
-          @include mix.tablet-styles {
+          @media (max-width: 600px) {
             display: none;
           }
         }
@@ -147,15 +151,14 @@ header {
         }
       }
       @include mix.tablet-styles {
-        order: -1;
+        flex-grow: 1;
+        height: 0;
       }
       @include mix.mobile-l-styles {
-        height: 0;
-        flex-grow: 1;
       }
     }
     @include mix.tablet-styles {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
   }
 }
