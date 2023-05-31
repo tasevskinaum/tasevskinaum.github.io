@@ -376,6 +376,7 @@ header .wrapper .img-box .img img {
 @media (max-width: 768px) {
   header .wrapper .img-box {
     flex-grow: 1;
+    flex-shrink: 1;
     height: 0;
   }
 }
@@ -395,6 +396,4 @@ header .wrapper .img-box .img img {
   100% {
     bottom: 0.625rem;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

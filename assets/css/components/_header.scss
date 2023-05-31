@@ -152,6 +152,7 @@ header {
       }
       @include mix.tablet-styles {
         flex-grow: 1;
+        flex-shrink: 1;
         height: 0;
       }
       @include mix.mobile-l-styles {
